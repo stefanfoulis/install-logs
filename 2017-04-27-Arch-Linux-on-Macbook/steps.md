@@ -53,3 +53,8 @@ reboot
 ```
 
 Remove the usb drive!
+
+
+# Installation
+
+Following *Setting up Arch Linux* in https://medium.com/@philpl/arch-linux-running-on-my-macbook-2ea525ebefe3 to setup GNOME now.
