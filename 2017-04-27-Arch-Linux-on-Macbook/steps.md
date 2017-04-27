@@ -20,3 +20,36 @@ Install dhcpd, so that we have networking after the reboot.
 pacman -S dhcpcd
 systemctl enable dhcpcd
 ```
+
+Set a password: ``passwd``
+
+## Install a bootloader
+
+```
+pacman -S dosfstools
+bootctl --path=/boot install
+```
+
+Save this into ``/boot/loader/entries/arch.conf``
+
+```
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=/dev/sda2 rw elevator=deadline quiet splash resume=/dev/sda3 nmi_watchdog=0
+```
+
+make this the default boot entry
+
+```
+echo "default arch" > /boot/loader/loader.conf
+```
+
+Now we can boot into the system.
+
+```
+exit
+reboot
+```
+
+Remove the usb drive!
