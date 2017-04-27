@@ -8,4 +8,15 @@ coretemp
 applesmc
 ```
 
+Sync the pacman package library:
 
+```
+pacman -Syyu
+```
+
+Install dhcpd, so that we have networking after the reboot.
+
+```
+pacman -S dhcpcd
+systemctl enable dhcpcd
+```
