@@ -58,3 +58,16 @@ Remove the usb drive!
 # Installation
 
 Following *Setting up Arch Linux* in https://medium.com/@philpl/arch-linux-running-on-my-macbook-2ea525ebefe3 to setup GNOME now.
+
+
+```
+groupadd users  # "users" group already existed for me
+useradd -m -g users -G wheel -s /bin/bash stefanfoulis
+pacman -S sudo
+echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.s/wheel.conf
+passwd stefanfoulis
+passwd -l root
+````
+
+
+```
